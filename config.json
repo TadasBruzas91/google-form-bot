@@ -1,0 +1,22 @@
+{
+    "webdriver":{
+        "driver_path":"/home/tadas/Documents/Drivers/Chrome-driver/chromedriver",
+        "options":["-incognito"]
+    },
+    "scraper":{
+        "base_url":"https://etherscan.io/",
+        "address":"0xcb7FF8Dd2AA28D4b79aE4Ff4d3A2B27E3fCb9555"
+    },
+    "form":{
+        "url":"https://docs.google.com/forms/d/e/1FAIpQLSeI8_vYyaJgM7SJM4Y9AWfLq-tglWZh6yt7bEXEOJr_L-hV1A/viewform?formkey=dGx0b1ZrTnoyZDgtYXItMWVBdVlQQWc6MQ",
+        "input_titles":[
+            "This is a text question",
+            "This is a paragraph question",
+            "This is a multiple choice question",
+            "This is a checkbox question",
+            "This is a choose from a list question",
+            "This is a scale questionw",
+            "This is a grid question"
+        ]
+    }
+}
