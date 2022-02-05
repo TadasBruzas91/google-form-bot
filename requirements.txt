@@ -1,2 +1,4 @@
+lxml
+pandas
 python-json-config
 selenium
