@@ -14,6 +14,12 @@
             "From user",
             "To user",
             "Amount"
+        ],
+        "data_order":[
+            "Txn Hash",
+            "Address",
+            "To",
+            "Value"
         ]
     }
 }

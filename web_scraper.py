@@ -60,7 +60,9 @@ class Scraper():
 
             self.time_converter()
             self.value_converter()
-            print(self.data[0]["To"])
+
+    def close(self):
+        self.browser.close()
         
     def time_converter(self):
         if self.data:
@@ -70,9 +72,13 @@ class Scraper():
                 if time_list[1].lower() == "min" or time_list[1].lower() == "mins":
                     minutes = int(time_list[0])
                 elif time_list[1].lower() == "hr" or time_list[1].lower() == "hrs":
-                    minutes = int(time_list[0]) * 60 + int(time_list[2])
+                    minutes = int(time_list[0]) * 60
+                    if len(time_list) > 4:
+                        minutes += int(time_list[2])
                 elif time_list[1].lower() == "day" or time_list[1].lower() == "days":
-                    minutes = int(time_list[0]) * 1440 + int(time_list[2]) * 60
+                    minutes = int(time_list[0]) * 1440
+                    if len(time_list) > 4:
+                        minutes += int(time_list[2]) * 60
                 self.data[0]["Age"][index] = minutes
 
     def value_converter(self):
@@ -80,7 +86,8 @@ class Scraper():
                 value_list = value.split(" ")
                 self.data[0]["Value"][index] = float(value_list[0])
 
-
+    def get_scraped_data(self):
+        return self.data
 
 
 
