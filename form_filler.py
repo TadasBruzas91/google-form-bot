@@ -22,9 +22,10 @@ class Form(Scraper):
         self.inputs_test = True
         print("Form check success!")
 
-    def fill_form(self, data, addresses, data_order,input_titles_for_test, time, value):
+    def fill_form(self, data, addresses, data_order, input_titles_for_test, time, values_list):
         minutes = self.convert_time_to_minutes(time)
         form_counter = 1
+        print(values_list)
         if data and addresses:
             for index, entry in enumerate(data[0]["Value"]):
                 data_minutes = data[0]["Age"][index]
@@ -32,7 +33,7 @@ class Form(Scraper):
                 if data_minutes > minutes:
                     print("Finish time")
                     return
-                if data_value != value or value <= 0:
+                if data_value not in values_list:
                     continue
                 self.browser.implicitly_wait(10)
                 self.find_inputs(input_titles_for_test)

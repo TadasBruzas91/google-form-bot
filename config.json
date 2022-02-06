@@ -32,7 +32,7 @@
         ]
     },
     "transaction_setup":{
-        "value": 0.020729916,
-        "age": "50 day 17 hrs ago"
+        "values_list": [0.072917413, 30.108600555, 0.147],
+        "age": "50 days ago"
     }
 }
