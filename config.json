@@ -13,17 +13,26 @@
             "Hash address",
             "From user",
             "To user",
-            "Amount"
+            "Amount",
+            "Question 1",
+            "Question 2",
+            "Question 3",
+            "Question 4"
+            
         ],
         "data_order":[
             "Txn Hash",
-            "Address",
+            "Address_from_file",
             "To",
-            "Value"
+            "Value",
+            "Radio-1",
+            "Radio-2",
+            "Checkbox-2-4",
+            "Checkbox-1-5-6-10"
         ]
     },
     "transaction_setup":{
-        "value": 0.012705835,
-        "age": "15 days"
+        "value": 0.020729916,
+        "age": "50 day 17 hrs ago"
     }
 }
