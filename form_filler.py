@@ -23,8 +23,16 @@ class Form(Scraper):
         print("Form check success!")
 
     def fill_form(self, data, addresses, data_order,input_titles_for_test, time, value):
+        minutes = self.convert_time_to_minutes(time)
         if data and addresses:
             for index, entry in enumerate(data[0]["Value"]):
+                data_minutes = data[0]["Age"][index]
+                data_value = data[0]["Value"][index]
+                if data_minutes > minutes:
+                    print("Finish time")
+                    return
+                if data_value != value:
+                    continue
                 self.browser.implicitly_wait(10)
                 self.find_inputs(input_titles_for_test)
                 for indx, input in enumerate(self.inputs):
@@ -49,8 +57,20 @@ class Form(Scraper):
                 link.click()
             print("Finish data")
 
-
-        
+    def convert_time_to_minutes(self, time):
+        time_list = time.split(" ")
+        minutes = 0
+        if time_list[1].lower() == "min" or time_list[1].lower() == "mins":
+            minutes = int(time_list[0])
+        elif time_list[1].lower() == "hr" or time_list[1].lower() == "hrs":
+            minutes = int(time_list[0]) * 60
+        if len(time_list) > 4:
+            minutes += int(time_list[2])
+        elif time_list[1].lower() == "day" or time_list[1].lower() == "days":
+            minutes = int(time_list[0]) * 1440
+        if len(time_list) > 4:
+            minutes += int(time_list[2]) * 60
+        return minutes
 
 
 # For testing

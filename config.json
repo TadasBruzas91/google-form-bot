@@ -21,5 +21,9 @@
             "To",
             "Value"
         ]
+    },
+    "transaction_setup":{
+        "value": 0.012705835,
+        "age": "15 days"
     }
 }

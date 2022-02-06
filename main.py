@@ -24,5 +24,5 @@ scraped_data = scraper.get_scraped_data()
 scraper.close()
 
 form = Form(config.webdriver.driver_path, config.webdriver.options, config.form.url)
-form.fill_form(scraped_data, addresses_from_file, config.form.data_order, config.form.input_titles, "1 day", 0)
+form.fill_form(scraped_data, addresses_from_file, config.form.data_order, config.form.input_titles, config.transaction_setup.age, config.transaction_setup.value)
 form.close()
